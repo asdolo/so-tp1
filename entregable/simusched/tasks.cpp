@@ -1,4 +1,6 @@
 #include "tasks.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -18,6 +20,24 @@ void TaskAlterno(int pid, vector<int> params) { // params: ms_pid, ms_io, ms_pid
 	}
 }
 
+void TaskConsola(int pid, vector<int> params) { // params: n, bmin, bmax, ...
+	for(int i = 0; i < (int)params[0]; i++) {
+		uso_IO(pid,randomRange(params[1],params[2]));
+	}
+}
+
+void TaskPajarillo(int pid, vector<int> params) { // params: cantidad_repeticiones, tiempo_cpu, tiempo_bloqueo, ...
+	for(int i = 0; i < (int)params[0]; i++) {
+		uso_CPU(pid, (int)params[1]);
+		uso_IO(pid,(int)params[2]);
+	}
+}
+
+int randomRange(int min, int max)
+{
+	//return (int)(((double)(rand()/RAND_MAX)*(max-min)) + min);
+	return (int) ((double)(((double)rand())/((double)(RAND_MAX)))*(max-min) + min);
+}
 
 
 void tasks_init(void) {
@@ -27,4 +47,7 @@ void tasks_init(void) {
 	register_task(TaskCPU, 1);
 	register_task(TaskIO, 2);
 	register_task(TaskAlterno, -1);
+	register_task(TaskConsola, 3);
+	register_task(TaskPajarillo, 3);
+
 }

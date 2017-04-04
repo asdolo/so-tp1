@@ -3,5 +3,6 @@
 
 #include "basetask.h"
 void tasks_init(void);
+int randomRange(int min, int max);
 
 #endif
