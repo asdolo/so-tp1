@@ -5,10 +5,6 @@
 #include <queue>
 #include "basesched.h"
 
-struct task_data {
-	int pid;
-	bool bloqueada;
-};
 
 struct cpu_data {
 	int tareaActual;
@@ -24,9 +20,12 @@ class SchedRR : public SchedBase {
 		virtual void load(int pid);
 		virtual void unblock(int pid);
 		virtual int tick(int cpu, const enum Motivo m);
+		int nextReadyTask();
+		void TaskSwitch(int cpu,const enum Motivo m);
 
 	private:
-		std::vector<task_data> tasks;
+		std::queue<int> tasksBloqueadas;
+		std::queue<int> tasksReady;
 		std::vector<cpu_data> cpus;
 };
 
