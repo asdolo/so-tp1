@@ -33,6 +33,16 @@ void TaskPajarillo(int pid, vector<int> params) { // params: cantidad_repeticion
 	}
 }
 
+
+
+void TaskPriorizada(int pid,std::vector<int> params){
+	uso_CPU(pid,(int)params[1]);
+}
+
+
+
+
+
 int randomRange(int min, int max)
 {
 	//return (int)(((double)(rand()/RAND_MAX)*(max-min)) + min);
@@ -49,5 +59,7 @@ void tasks_init(void) {
 	register_task(TaskAlterno, -1);
 	register_task(TaskConsola, 3);
 	register_task(TaskPajarillo, 3);
+		register_task(TaskPriorizada, 2);
+
 
 }

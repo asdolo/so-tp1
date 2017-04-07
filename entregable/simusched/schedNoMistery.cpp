@@ -30,7 +30,7 @@ int SchedNoMistery::tick(int cpu, const enum Motivo m) {
 	} else {
 		// Siempre sigue el pid actual mientras no termine.
 		if (current_pid(cpu) == IDLE_TASK && !tasksReady.empty()) {
-			 getNextReadyAndDelete();
+			return getNextReadyAndDelete();
 		} else {
 			return current_pid(cpu);
 		}

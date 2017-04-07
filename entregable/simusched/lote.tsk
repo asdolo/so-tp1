@@ -1,25 +1,6 @@
-TaskCPU 100
-TaskCPU 5
-TaskCPU 50
+TaskPriorizada 1 10
+TaskPriorizada 2 11
 @2:
-TaskCPU 1
-TaskCPU 10
-@3:
-TaskCPU 30
-TaskCPU 50
-TaskCPU 100
-TaskCPU 5
-TaskCPU 50
-@20:
-TaskCPU 15
-TaskCPU 16
-@34:
-TaskCPU 32
-TaskCPU 20
-@5:
-TaskCPU 1
-TaskCPU 2
-TaskCPU 3
-@4:
-TaskCPU 18
-TaskCPU 29
+TaskPriorizada 1 9
+@11:
+TaskPriorizada 1 2
