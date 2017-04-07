@@ -24,6 +24,7 @@ class SchedPSJF : public SchedBase {
 		std::vector<int> tasksReady[5];
 		std::vector<int> tasksCorriendo;
 
+    void switchTareas(int cpu, int result, int indicePrioridad, int indiceDeLista) const;
 };
 
 #endif
