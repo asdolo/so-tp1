@@ -1,0 +1,8 @@
+TaskPriorizada 4 15
+TaskPriorizada 3 20 
+@2:
+TaskPriorizada 1 1 
+@3:
+TaskPriorizada 2 2
+@4:
+TaskPriorizada 5 10

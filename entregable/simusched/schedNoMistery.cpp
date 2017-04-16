@@ -38,7 +38,7 @@ int SchedNoMistery::tick(int cpu, const enum Motivo m) {
 }
 
 int SchedNoMistery::getNextReadyAndDelete(){
-	int i;
+	unsigned int i;
 	int tareaMasCorta = tasksReady[0];
 	int indiceTareaMasCorta=0;
 	for (i = 1; i < tasksReady.size(); i++)

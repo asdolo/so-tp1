@@ -31,7 +31,7 @@ void SchedRR::load(int pid) {
 
 void SchedRR::unblock(int pid) {
 	
-	for (int i = 0; i < tasksBloqueadas.size(); i++)
+	for (unsigned int i = 0; i < tasksBloqueadas.size(); i++)
 	{
 		int t = tasksBloqueadas.front();
 		tasksBloqueadas.pop();
