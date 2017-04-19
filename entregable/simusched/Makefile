@@ -49,5 +49,11 @@ ejercicio6:
 	./simusched loteEj6b.tsk 2 2 0 SchedPSJF | python graphsched.py > graficos/ejercicio6b.png
 
 ejercicio7:
-	
+	./simusched loteEj71.tsk 1 1 0 SchedMistery | python graphsched.py > graficos/ej7Mistery1NucleoLote1.png
+	./simusched loteEj71.tsk 2 1 0 SchedMistery | python graphsched.py > graficos/ej7Mistery2NucleoLote1.png
+	./simusched loteEj71PSJF.tsk 1 1 0 SchedPSJF | python graphsched.py > graficos/ej7PSJF1NucleoLote1.png
+	./simusched loteEj71PSJF.tsk 2 1 0 SchedPSJF | python graphsched.py > graficos/ej7PSJF2NucleoLote1.png
+	./simusched loteEj71.tsk 1 1 0 SchedRR 5 | python graphsched.py > graficos/ej7RR1NucleoLote1.png
+	./simusched loteEj71.tsk 2 1 0 SchedRR 5 5 | python graphsched.py > graficos/ej7RR2NucleoLote1.png
+	./simusched loteEj7VideoJuego.tsk 1 1 0 SchedRR 5 | python graphsched.py > graficos/ej7RRLoteVideojuego.png
 
