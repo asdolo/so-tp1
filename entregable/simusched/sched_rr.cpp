@@ -112,15 +112,15 @@ void SchedRR::TaskSwitch(int cpu, const enum Motivo m)
 	if (m == BLOCK){
 		// La tarea anterior se bloqueó
 		tasksBloqueadas.push(cpus[cpu].tareaActual);	// La agregamos a la cola de tareas bloqueadas
-		cpus[cpu].quantumsTranscurridos = 0;			// Reseteamos los quantums transcurridos, ya que vamos a asignar una nueva tarea a este cpu
-		cpus[cpu].tareaActual = nextReadyTask();		// Buscamos la siguiente tarea ready. Si no hay, asignamos IDLE_TASK.
+		
 	}
 	else if (m == TICK)
 	{
 		// La tarea cumplió su cantidad de quamtums en este CPU
 		if(cpus[cpu].tareaActual!=IDLE_TASK) tasksReady.push(cpus[cpu].tareaActual);			// La agregamos al final de cola de tareas ready
-		cpus[cpu].quantumsTranscurridos = 0;			// Reseteamos los quantums transcurridos, ya que vamos a asignar una nueva tarea a este cpu
-		cpus[cpu].tareaActual = nextReadyTask();		// Buscamos la siguiente tarea ready. Si no hay, asignamos IDLE_TASK.
-
+		
 	}
+	cpus[cpu].quantumsTranscurridos = 0;			// Reseteamos los quantums transcurridos, ya que vamos a asignar una nueva tarea a este cpu
+	cpus[cpu].tareaActual = nextReadyTask();		// Buscamos la siguiente tarea ready. Si no hay, asignamos IDLE_TASK.
+
 }

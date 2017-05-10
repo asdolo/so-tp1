@@ -87,6 +87,10 @@ int SchedPSJF::getNextReady(int cpu){
         int tareaADesalojar= cpus[cpu].tareaActual;
         //PrioridadADesalojar es la prioridad de la tarea que esta corriendo en el CPU
         int prioridadADesalojar= cpus[cpu].prioridad;
+        if (--prioridadADesalojar<0)
+        {
+            prioridadADesalojar=0;
+        }
         //Actualizo la informacion del CPU con la nuevatarea result
         cpus[cpu].tareaActual=result;
         cpus[cpu].prioridad = indicePrioridad;
@@ -101,6 +105,10 @@ int SchedPSJF::getNextReady(int cpu){
         //TareaADesalojar es la tarea que esta corriendo en el CPU
         int tareaADesalojar= cpus[cpu].tareaActual;
         int prioridadADesalojar= cpus[cpu].prioridad;
+        if (--prioridadADesalojar<0)
+        {
+            prioridadADesalojar=0;
+        }
         cpus[cpu].tareaActual=result;
         cpus[cpu].prioridad = indicePrioridad;
         //eliminar result del vector
